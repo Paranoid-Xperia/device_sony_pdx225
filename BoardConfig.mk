@@ -44,6 +44,11 @@ TARGET_2ND_CPU_VARIANT := cortex-a76
 # Boot
 BOARD_BOOT_HEADER_VERSION := 3
 
+# Boot control
+SOONG_CONFIG_NAMESPACES += ufsbsg
+SOONG_CONFIG_ufsbsg += ufsframework
+SOONG_CONFIG_ufsbsg_ufsframework := bsg
+
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := holi
 TARGET_NO_BOOTLOADER := true

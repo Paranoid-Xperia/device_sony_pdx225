@@ -61,8 +61,13 @@ BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 TARGET_SCREEN_DENSITY := 420
 
 # HIDL
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
+    $(DEVICE_PATH)/configs/vintf/framework_matrix_sony.xml \
+    hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml \
+DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
 DEVICE_MANIFEST_FILE += \
-    $(DEVICE_PATH)/configs/vintf/manifest_holi.xml
+    $(DEVICE_PATH)/configs/vintf/manifest_holi.xml \
+    $(DEVICE_PATH)/configs/vintf/manifest_sony.xml
 
 # Kernel
 BOARD_BOOT_HEADER_VERSION := 3

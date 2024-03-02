@@ -61,6 +61,7 @@ TARGET_COMMON_QTI_COMPONENTS := \
     init \
     media \
     overlay \
+    perf \
     telephony \
     usb \
     wfd \

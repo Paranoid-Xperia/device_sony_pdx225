@@ -184,6 +184,18 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.neuralnetworks-V1-ndk.vendor
 
+# Overlay
+PRODUCT_ENFORCE_RRO_TARGETS := *
+PRODUCT_PACKAGES += \
+    CarrierConfigRes \
+    SonyPDX234NfcNciRes \
+    SonyPDX234FrameworksRes \
+    SonyPDX234SettingsProviderOverlay \
+    SonyPDX234SettingsRes \
+    SonyPDX234SystemUIRes \
+    SonyPDX234TelephonyRes \
+    WifiRes
+
 # RenderScript
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl

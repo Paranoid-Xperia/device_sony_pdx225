@@ -64,4 +64,13 @@
             <instance>sigmahal64</instance>
         </interface>
     </hal>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.semc.system.idd</name>
+        <version>1.1</version>
+        <interface>
+            <name>IIdd</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
 </compatibility-matrix>

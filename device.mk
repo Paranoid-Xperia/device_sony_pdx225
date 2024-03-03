@@ -197,6 +197,10 @@ PRODUCT_PACKAGES += \
     SonyPDX234TelephonyRes \
     WifiRes
 
+# Properties
+include $(LOCAL_PATH)/properties.mk
+
+
 # RenderScript
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl

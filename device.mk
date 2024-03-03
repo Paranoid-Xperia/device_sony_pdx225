@@ -46,6 +46,7 @@ PRODUCT_PACKAGES += \
 TARGET_BOARD_PLATFORM := holi
 
 # Partitions
+PRODUCT_BUILD_SUPER_PARTITION := false
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # QTI components
@@ -102,7 +103,6 @@ PRODUCT_PACKAGES += \
     android.hardware.boot@1.2-service
 
 # Camera
-# Camera
 PRODUCT_PACKAGES += \
     android.hardware.camera.common@1.0.vendor \
     android.hardware.camera.device@3.5.vendor \
@@ -124,6 +124,34 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.raw.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.raw.xml \
     frameworks/native/data/etc/android.hardware.camera.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.xml
 
+# DISPLAY
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.mapper@3.0-impl-qti-display \
+    android.hardware.graphics.mapper@4.0-impl-qti-display \
+    android.hardware.memtrack@1.0-impl \
+    android.hardware.memtrack@1.0-service \
+    libdisplayconfig.qti \
+    libdisplayconfig.qti \
+    libdisplayconfig.system.qti \
+    libmemutils \
+    libqdMetaData \
+    libqdMetaData.system \
+    libsdmcore \
+    libsdmutils \
+    libtinyxml \
+    memtrack.default \
+    vendor.display.config@1.15.vendor \
+    vendor.display.config@1.5 \
+    vendor.display.config@2.0 \
+    vendor.display.config@2.0.vendor \
+    vendor.qti.hardware.display.allocator-service \
+    vendor.qti.hardware.display.composer-service \
+    vendor.qti.hardware.display.mapper@1.0.vendor \
+    vendor.qti.hardware.display.mapper@1.1.vendor \
+    vendor.qti.hardware.display.mapper@2.0.vendor \
+    vendor.qti.hardware.display.mapper@3.0.vendor \
+    vendor.qti.hardware.display.mapper@4.0.vendor
+
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.3.vendor \
@@ -132,7 +160,12 @@ PRODUCT_PACKAGES += \
 
 # Fastbootd
 PRODUCT_PACKAGES += \
+    android.hardware.fastboot@1.1-impl.custom \
     fastbootd
+
+# Fingerprint
+PRODUCT_PACKAGES += \
+    android.hardware.biometrics.fingerprint@2.1.vendor
 
 # Gatekeeper
 PRODUCT_PACKAGES += \
@@ -140,14 +173,8 @@ PRODUCT_PACKAGES += \
 
 # Health
 PRODUCT_PACKAGES += \
-    android.hardware.health-service.qti \
-    android.hardware.health-service.qti_recovery \
-    android.hardware.health@1.0.vendor \
-    android.hardware.health@2.1.vendor
-
-# Identity
-PRODUCT_PACKAGES += \
-    android.hardware.identity-V4-ndk.vendor
+    android.hardware.health@2.1-impl-qti \
+    android.hardware.health@2.1-service
 
 # Init
 PRODUCT_PACKAGES += \
@@ -158,52 +185,46 @@ PRODUCT_COPY_FILES += \
 
 # Keymaster
 PRODUCT_PACKAGES += \
-    android.hardware.keymaster@4.1.vendor \
-    libkeymaster_messages.vendor
-
-# Keymint
-PRODUCT_PACKAGES += \
-    android.hardware.hardware_keystore.xml \
-    android.hardware.security.keymint-V2-ndk.vendor \
-    android.hardware.security.secureclock-V1-ndk.vendor \
-    android.hardware.security.sharedsecret-V1-ndk.vendor
-
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.keystore.app_attest_key.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.keystore.app_attest_key.xml \
-    frameworks/native/data/etc/android.software.device_id_attestation.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.device_id_attestation.xml
+    android.hardware.keymaster@4.1.vendor
 
 # Media
 PRODUCT_PACKAGES += \
-    android.hardware.media.c2@1.2.vendor \
     libavservices_minijail \
-    libcodec2_soft_common.vendor \
-    libcodec2_hidl@1.2.vendor \
-    libcodec2_vndk.vendor \
-    libsfplugin_ccodec_utils.vendor
+    libavservices_minijail.vendor \
+    libavservices_minijail_vendor \
+    libcodec2_hidl@1.0.vendor
 
-# Neural Networks
+# NFC
 PRODUCT_PACKAGES += \
-    android.hardware.neuralnetworks-V1-ndk.vendor
+    android.hardware.nfc-service.nxp \
+    android.hardware.secure_element@1.2.vendor \
+    com.android.nfc_extras \
+    Tag \
+    NfcNci
+
+# NFC
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/nfc/libnfc-nxp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp.conf \
+    $(LOCAL_PATH)/nfc/libnfc-nxp-typef.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp-typef.conf \
+    $(LOCAL_PATH)/nfc/libnfc-nci.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf
 
 # Overlay
 PRODUCT_ENFORCE_RRO_TARGETS := *
 PRODUCT_PACKAGES += \
-    CarrierConfigRes \
-    SonyPDX234NfcNciRes \
-    SonyPDX234FrameworksRes \
-    SonyPDX234SettingsProviderOverlay \
-    SonyPDX234SettingsRes \
-    SonyPDX234SystemUIRes \
-    SonyPDX234TelephonyRes \
-    WifiRes
+    CarrierConfigResCommon \
+    SonyPDX225FrameworksRes \
+    SonyPDX225SystemUIRes \
+    SonyMurrayFrameworksResCommon \
+    SonyMurrayProductFrameworks \
+    SonyMurraySettingsProviderOverlayCommon \
+    SonyMurraySettingsResCommon \
+    SonyMurraySystemUIResCommon \
+    SonyMurrayTelephonyResCommon \
+    WifiResCommon \
+    NfcResTarget
 
 # Properties
 include $(LOCAL_PATH)/properties.mk
-
-
-# RenderScript
-PRODUCT_PACKAGES += \
-    android.hardware.renderscript@1.0-impl
 
 # QMI
 PRODUCT_PACKAGES += \

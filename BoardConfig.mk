@@ -63,8 +63,7 @@ TARGET_SCREEN_DENSITY := 420
 # HIDL
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
     $(DEVICE_PATH)/configs/vintf/framework_matrix_sony.xml \
-    hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml \
-DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
+
 DEVICE_MANIFEST_FILE += \
     $(DEVICE_PATH)/configs/vintf/manifest_holi.xml \
     $(DEVICE_PATH)/configs/vintf/manifest_sony.xml
@@ -101,7 +100,7 @@ BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_KERNEL_SEPARATED_DTBO := true
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_NO_GCC := true
-TARGET_KERNEL_SOURCE := kernel/sony/sm6375
+TARGET_KERNEL_SOURCE := kernel/sony/pdx225
 TARGET_KERNEL_CONFIG := pdx225_defconfig
 
 BOARD_MKBOOTIMG_ARGS += --base $(BOARD_KERNEL_BASE)
@@ -156,7 +155,7 @@ TARGET_COPY_OUT_VENDOR_DLKM := vendor_dlkm
 # Recovery
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := true
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/fstab.default
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/init/fstab.qcom
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true

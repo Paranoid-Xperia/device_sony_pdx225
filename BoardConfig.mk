@@ -65,8 +65,7 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
     $(DEVICE_PATH)/configs/vintf/framework_matrix_sony.xml \
 
 DEVICE_MANIFEST_FILE += \
-    $(DEVICE_PATH)/configs/vintf/manifest_holi.xml \
-    $(DEVICE_PATH)/configs/vintf/manifest_sony.xml
+    $(DEVICE_PATH)/configs/vintf/manifest.xml
 
 # Kernel
 BOARD_BOOT_HEADER_VERSION := 3

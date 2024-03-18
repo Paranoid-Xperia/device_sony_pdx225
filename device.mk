@@ -199,7 +199,6 @@ PRODUCT_PACKAGES += \
 # Media
 PRODUCT_PACKAGES += \
     libavservices_minijail \
-    libavservices_minijail.vendor \
     libavservices_minijail_vendor \
     libcodec2_hidl@1.0.vendor
 
@@ -262,9 +261,7 @@ PRODUCT_COPY_FILES += \
 
 # Thermal
 PRODUCT_PACKAGES += \
-    android.hardware.thermal@2.0 \
-    android.hardware.thermal@2.0.vendor \
-    android.hardware.thermal@2.0-service.qti-v2
+    android.hardware.thermal@2.0-service.qti
 
 # Touchscreen
 PRODUCT_COPY_FILES += \
@@ -288,11 +285,8 @@ PRODUCT_COPY_FILES += \
 # WiFi
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.wifi.aware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.aware.xml \
-    frameworks/native/data/etc/android.hardware.wifi.direct.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.direct.xml \
     frameworks/native/data/etc/android.hardware.wifi.passpoint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.passpoint.xml \
     frameworks/native/data/etc/android.hardware.wifi.rtt.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.rtt.xml \
-    frameworks/native/data/etc/android.hardware.wifi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.xml \
-    frameworks/native/data/etc/android.software.ipsec_tunnels.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.ipsec_tunnels.xml
 
 # WiFi Display
 PRODUCT_PACKAGES += \

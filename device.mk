@@ -69,7 +69,6 @@ TARGET_COMMON_QTI_COMPONENTS := \
     wlan
 
 TARGET_USE_AIDL_QTI_BT_AUDIO := true
-TARGET_USE_AIDL_QTI_HEALTH := true
 
 # Shipping API level
 BOARD_API_LEVEL := 33
@@ -177,11 +176,6 @@ BOARD_HAVE_QCOM_FM := true
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0.vendor
 
-# Health
-PRODUCT_PACKAGES += \
-    android.hardware.health@2.1-impl-qti \
-    android.hardware.health@2.1-service
-
 # Init
 PRODUCT_PACKAGES += \
     fstab.qcom
@@ -192,6 +186,15 @@ PRODUCT_COPY_FILES += \
 # Keymaster
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.1.vendor
+
+# Health
+PRODUCT_PACKAGES += \
+    android.hardware.health@2.1-impl-qti \
+    android.hardware.health@2.1-service
+
+# Lineage Health
+PRODUCT_PACKAGES += \
+    vendor.lineage.health-service.default
 
 # Media
 PRODUCT_PACKAGES += \

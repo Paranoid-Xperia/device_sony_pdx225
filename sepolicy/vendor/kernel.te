@@ -1,2 +1,1 @@
-# Kernel needs to read the zram writeback files
-allow kernel system_data_file:file r_file_perms;
+allow kernel vendor_sysfs_battery_supply:dir { search open read };

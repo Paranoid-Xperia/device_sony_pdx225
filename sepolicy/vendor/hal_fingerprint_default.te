@@ -2,22 +2,29 @@ allow hal_fingerprint_default etsd_device:chr_file rw_file_perms;
 
 allow hal_fingerprint_default tee_device:chr_file rw_file_perms;
 
-unix_socket_connect(hal_fingerprint_default, tad, tad)
+unix_socket_connect(hal_camera_default, tad, tad)
 
-set_prop(hal_fingerprint_default, vendor_fingerprint_hwid_prop)
+allow hal_fingerprint_default property_socket:sock_file { write };
+
+allow hal_fingerprint_default init:unix_stream_socket { connectto };
+
+allow hal_fingerprint_default vendor_fingerprint_hwid_prop:property_service { set };
+allow hal_fingerprint_default vendor_fingerprint_hwid_prop:file { read getattr map open };
 
 allow hal_fingerprint_default hal_idd_hwservice:hwservice_manager find;
 allow hal_fingerprint_default hal_idd_default:binder call;
-binder_call(hal_fingerprint_default, hal_idd_default)
 
-allow hal_fingerprint_default vendor_hal_perf_hwservice:hwservice_manager find;
-binder_call(hal_fingerprint_default, vendor_hal_perf_default)
+allow hal_fingerprint_default hal_egis_hwservice:hwservice_manager { add find };
 
-r_dir_file(hal_fingerprint_default, vendor_sysfs_battery_supply)
+allow hal_fingerprint_default vendor_sysfs_battery_supply:dir { search };
 
-allow hal_vibrator_default proc_asound:file r_file_perms;
+allow hal_fingerprint_default vendor_hal_perf_default:fd use;
+allow hal_fingerprint_default vendor_hal_perf_hwservice:hwservice_manager { find };
+allow hal_fingerprint_default vendor_hal_perf_default:binder { call transfer };
 
-add_service(hal_fingerprint_default, egis_diagnostic_service)
-add_hwservice(hal_fingerprint_default, hal_egis_hwservice)
+allow hal_fingerprint_default vendor_sysfs_battery_supply:file { read getattr open };
+allow hal_fingerprint_default vendor_sysfs_battery_supply:dir { search };
 
-vndbinder_use(hal_fingerprint_default)
+allow hal_fingerprint_default tad_socket:sock_file write;
+
+allow hal_fingerprint_default tad:unix_stream_socket { connectto };

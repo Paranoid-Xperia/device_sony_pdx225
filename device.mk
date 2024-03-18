@@ -17,7 +17,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
 # Get non-open-source specific aspects
-$(call inherit-product, vendor/sony/pdx234/pdx234-vendor.mk)
+$(call inherit-product, vendor/sony/pdx225/pdx225-vendor.mk)
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \

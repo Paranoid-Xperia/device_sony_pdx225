@@ -194,6 +194,10 @@ PRODUCT_PACKAGES += \
     libavservices_minijail_vendor \
     libcodec2_hidl@1.0.vendor
 
+# Media (Device)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/media/media_codecs_holi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_holi.xml 
+
 # NFC
 PRODUCT_PACKAGES += \
     android.hardware.nfc-service.nxp \

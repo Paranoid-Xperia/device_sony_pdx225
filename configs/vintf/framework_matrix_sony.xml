@@ -2,7 +2,7 @@
      Copyright (C) 2023 Paranoid Android
      SPDX-License-Identifier: Apache-2.0
 -->
-<compatibility-matrix version="2.0" type="framework">
+<compatibility-matrix version="1.0" type="framework">
     <hal format="aidl" optional="true">
         <name>vendor.nxp.nxpnfc_aidl</name>
         <interface>

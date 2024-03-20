@@ -89,3 +89,6 @@
 /sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-02/c440000.qcom,spmi:qcom,pm8350c@2:qcom,flash_led@ee00/leds/led:torch_0/brightness u:object_r:sysfs_torch_brightness:s0
 /sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-02/c440000.qcom,spmi:qcom,pm8350c@2:qcom,flash_led@ee00/leds/led:torch_3/brightness u:object_r:sysfs_torch_brightness:s0
 /sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-02/c440000.qcom,spmi:qcom,pm8350c@2:qcom,flash_led@ee00/leds/led:switch_0/brightness u:object_r:sysfs_torch_brightness:s0
+
+# mmc device type
+/sys/devices/platform/soc/4784000.sdhci/mmc_host/mmc[0-9]/mmc[0-9]:[a-f0-9]+/type u:object_r:vendor_sysfs_mmc_device_type:s0

@@ -69,6 +69,7 @@ DEVICE_MANIFEST_FILE += \
     $(DEVICE_PATH)/configs/vintf/manifest_sony.xml
 
 # Kernel
+BOARD_DO_NOT_STRIP_VENDOR_MODULES := true
 BOARD_BOOT_HEADER_VERSION := 3
 BOARD_KERNEL_CMDLINE := \
     console=ttyMSM0,115200n8 \
@@ -108,6 +109,57 @@ BOARD_MKBOOTIMG_ARGS += --kernel_offset $(BOARD_KERNEL_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --second_offset $(BOARD_KERNEL_SECOND_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --dtb_offset $(BOARD_DTB_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
+
+# Kernel Modules
+BOARD_VENDOR_KERNEL_MODULES := \
+        $(KERNEL_MODULES_OUT)/apr_dlkm.ko \
+        $(KERNEL_MODULES_OUT)/pinctrl_lpi_dlkm.ko \
+        $(KERNEL_MODULES_OUT)/btpower.ko \
+        $(KERNEL_MODULES_OUT)/mbhc_dlkm.ko \
+        $(KERNEL_MODULES_OUT)/wcd937x_slave_dlkm.ko \
+        $(KERNEL_MODULES_OUT)/platform_dlkm.ko \
+        $(KERNEL_MODULES_OUT)/rdbg.ko \
+        $(KERNEL_MODULES_OUT)/q6_dlkm.ko \
+        $(KERNEL_MODULES_OUT)/wcd938x_slave_dlkm.ko \
+        $(KERNEL_MODULES_OUT)/va_macro_dlkm.ko \
+        $(KERNEL_MODULES_OUT)/wsa881x_analog_dlkm.ko \
+        $(KERNEL_MODULES_OUT)/adsp_loader_dlkm.ko \
+        $(KERNEL_MODULES_OUT)/snd_event_dlkm.ko \
+        $(KERNEL_MODULES_OUT)/bolero_cdc_dlkm.ko \
+        $(KERNEL_MODULES_OUT)/q6_notifier_dlkm.ko \
+        $(KERNEL_MODULES_OUT)/native_dlkm.ko \
+        $(KERNEL_MODULES_OUT)/rx_macro_dlkm.ko \
+        $(KERNEL_MODULES_OUT)/stub_dlkm.ko \
+        $(KERNEL_MODULES_OUT)/wcd938x_dlkm.ko \
+        $(KERNEL_MODULES_OUT)/machine_dlkm.ko \
+        $(KERNEL_MODULES_OUT)/q6_pdr_dlkm.ko \
+        $(KERNEL_MODULES_OUT)/tx_macro_dlkm.ko \
+        $(KERNEL_MODULES_OUT)/wcd9xxx_dlkm.ko \
+        $(KERNEL_MODULES_OUT)/swr_dlkm.ko \
+        $(KERNEL_MODULES_OUT)/aw882xx_dlkm.ko \
+        $(KERNEL_MODULES_OUT)/camera.ko \
+        $(KERNEL_MODULES_OUT)/wcd937x_dlkm.ko \
+        $(KERNEL_MODULES_OUT)/wcd_core_dlkm.ko \
+        $(KERNEL_MODULES_OUT)/bt_fm_slim.ko \
+        $(KERNEL_MODULES_OUT)/swr_ctrl_dlkm.ko \
+        $(KERNEL_MODULES_OUT)/wlan.ko \
+        $(KERNEL_MODULES_OUT)/adux1050.ko \
+        $(KERNEL_MODULES_OUT)/bu520x1nvx.ko \
+        $(KERNEL_MODULES_OUT)/last_logs.ko \
+        $(KERNEL_MODULES_OUT)/ldo_vibrator.ko \
+        $(KERNEL_MODULES_OUT)/p73.ko \
+        $(KERNEL_MODULES_OUT)/powerkey_forcecrash.ko \
+        $(KERNEL_MODULES_OUT)/sn1x0.ko \
+        $(KERNEL_MODULES_OUT)/sm5038_drv.ko \
+        $(KERNEL_MODULES_OUT)/sm5038_typec_drv.ko \
+        $(KERNEL_MODULES_OUT)/somc_battchg_ext.ko \
+        $(KERNEL_MODULES_OUT)/somc_battman_dbg.ko \
+        $(KERNEL_MODULES_OUT)/wakeup_irq_debug.ko \
+        $(KERNEL_MODULES_OUT)/rmnet_core.ko \
+        $(KERNEL_MODULES_OUT)/rmnet_ctl.ko \
+        $(KERNEL_MODULES_OUT)/rmnet_offload.ko \
+        $(KERNEL_MODULES_OUT)/rmnet_shs.ko \
+        $(KERNEL_MODULES_OUT)/slimbus-ngd.ko
 
 # Kernel modules
 BOARD_VENDOR_KERNEL_MODULES_BLOCKLIST_FILE := $(DEVICE_PATH)/modules.blocklist

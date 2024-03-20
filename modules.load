@@ -149,6 +149,8 @@ sn1x0.ko
 snd_event_dlkm.ko
 snd-usb-audio-qmi.ko
 socinfo.ko
+sm5038_drv.ko
+sm5038_typec_drv.ko
 somc_battchg_ext.ko
 somc_battman_dbg.ko
 sony_ext_uim_ctrl.ko
